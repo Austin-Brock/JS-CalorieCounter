@@ -38,3 +38,6 @@ function isInvalidInput(str) {
   // If there is no match, it will return null.
 }
 
+function addEntry() {
+  
+}
