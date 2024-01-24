@@ -27,8 +27,7 @@ function cleanInputString(str) {
   // Returns the input string with all occurrences of the matched characters removed.
 }
 
-function isInvalidInput(str) {
-  const regex = /\d+e\d+/i;
-  // Defines a regular expression to match scientific notation numbers (e.g., 1e10).
-  // However, the function is incomplete as it does not return any value or perform any actions.
-}
+  function isInvalidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+  }
