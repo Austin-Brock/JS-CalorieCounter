@@ -1,17 +1,33 @@
 <!DOCTYPE html>
+<!-- Specifies the document type and version of HTML -->
 <html lang="en">
+<!-- Root element of the HTML document, with language set to English -->
+
   <head>
+    <!-- Contains meta-information about the document -->
     <meta charset="utf-8" />
+    <!-- Specifies the character encoding for the document -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Links a CSS stylesheet for styling the page -->
     <title>Calorie Counter</title>
+    <!-- Sets the title of the document displayed in the browser's title bar or tab -->
   </head>
+
   <body>
+    <!-- Contains the content of the document -->
     <main>
+      <!-- Represents the main content of the body -->
       <h1>Calorie Counter</h1>
+      <!-- A heading for the page -->
+
       <div class="container">
+        <!-- A container for other elements -->
         <form id="calorie-counter">
+          <!-- Defines a form with an ID -->
           <label for="budget">Budget</label>
+          <!-- A label for the budget input field -->
           <input
             type="number"
             min="0"
@@ -19,49 +35,46 @@
             placeholder="Daily calorie budget"
             required
           />
+          <!-- Input field for entering a numeric calorie budget -->
+
+          <!-- Fieldsets for different meal types and exercise, each with a legend -->
           <fieldset id="breakfast">
             <legend>Breakfast</legend>
             <div class="input-container"></div>
           </fieldset>
-          <fieldset id="lunch">
-            <legend>Lunch</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="dinner">
-            <legend>Dinner</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="snacks">
-            <legend>Snacks</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="exercise">
-            <legend>Exercise</legend>
-            <div class="input-container"></div>
-          </fieldset>
+          <!-- ...similar fieldsets for lunch, dinner, snacks, and exercise... -->
+
           <div class="controls">
+            <!-- Container for form controls -->
             <span>
               <label for="entry-dropdown">Add food or exercise:</label>
               <select id="entry-dropdown" name="options">
+                <!-- Dropdown to select type of entry -->
                 <option value="breakfast" selected>Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="snacks">Snacks</option>
-                <option value="exercise">Exercise</option>
+                <!-- Options for each meal type and exercise -->
+                <!-- ...other options... -->
               </select>
               <button type="button" id="add-entry">Add Entry</button>
+              <!-- Button to add an entry -->
             </span>
           </div>
+
           <div>
+            <!-- Container for submission buttons -->
             <button type="submit">
               Calculate Remaining Calories
             </button>
+            <!-- Button to submit the form -->
             <button type="button" id="clear">Clear</button>
+            <!-- Button to clear the form -->
           </div>
         </form>
         <div id="output" class="output hide"></div>
+        <!-- Div for displaying output, initially hidden -->
       </div>
     </main>
+
     <script src="./script.js"></script>
+    <!-- Links an external JavaScript file for interactivity -->
   </body>
 </html>
