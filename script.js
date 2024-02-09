@@ -56,8 +56,8 @@ function addEntry() {
 function getCaloriesFromInputs(list) {
   let calories = 0;
 
-  for (let i = 0; i < list.length; i++) {
-    const currVal = cleanInputString(list[i].value);
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
     const invalidInputMatch = isInvalidInput(currVal);
 
     if (invalidInputMatch) {
@@ -65,6 +65,6 @@ function getCaloriesFromInputs(list) {
       isError = true;
       return null;
     }
-
+    calories += Number(currVal);
   }
 }
