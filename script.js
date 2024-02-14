@@ -104,5 +104,5 @@ function calculateCalories(e) {
 }
 
 function clearForm() {
-
+  const inputContainers = document.querySelectorAll('.input-container');
 }
