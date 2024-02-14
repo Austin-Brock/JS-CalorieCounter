@@ -100,4 +100,5 @@ function calculateCalories(e) {
   <p>${consumedCalories}Calories Consumed</p>
   <p>${exercisedCalories}Calories Burned</p>
   `;
+  output.classList.remove('hide');
 }
