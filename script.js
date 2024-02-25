@@ -101,6 +101,9 @@ const playSong = (id) => {
   audio.play();
 };
 
+const pauseSong = () => {
+  
+}
 
 
 const renderSongs = (array) => {
