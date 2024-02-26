@@ -131,7 +131,7 @@ const renderSongs = (array) => {
 };
 
 const getCurrentSongIndex = () => {
-  
+  return userData?.songs.indexOf(userData?.currentSong)
 }
 
 playButton.addEventListener("click", () => {
