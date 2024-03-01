@@ -109,10 +109,16 @@ const pauseSong = () => {
 };
 
 const playNextSong = () => {
+
   if (userData?.currentSong === null) {
-    playSong(userData?.songs[0].id)
+    playSong(userData?.songs[0].id);
+  } else {
+    const currentSongIndex = getCurrentSongIndex();
+    const nextSong = userData?.songs[currentSongIndex + 1];
+
+    playSong(nextSong.id);
   }
-}
+};
 
 const renderSongs = (array) => {
   const songsHTML = array
@@ -136,9 +142,7 @@ const renderSongs = (array) => {
   playlistSongs.innerHTML = songsHTML;
 };
 
-const getCurrentSongIndex = () => {
-  return userData?.songs.indexOf(userData?.currentSong)
-}
+const getCurrentSongIndex = () => userData?.songs.indexOf(userData?.currentSong);
 
 playButton.addEventListener("click", () => {
     if (userData?.currentSong === null) {
@@ -150,16 +154,22 @@ playButton.addEventListener("click", () => {
 
 pauseButton.addEventListener("click",  pauseSong);
 
-userData?.songs.sort((a,b) => {
-  if (a.title < b.title) {
-    return -1;
-  }
+  
 
-  if (a.title > b.title) {
-    return 1;
-  }
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
 
-  return 0;
-});
+    if (a.title > b.title) {
+      return 1;
+    }
 
-renderSongs(userData?.songs);
+    return 0;
+  });
+
+  return userData?.songs;
+};
+
+renderSongs(sortSongs());
