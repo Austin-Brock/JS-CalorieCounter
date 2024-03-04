@@ -163,6 +163,8 @@ playButton.addEventListener("click", () => {
 
 pauseButton.addEventListener("click",  pauseSong);
 
+
+previousButton.addEventListener("click", playPreviousSong);
   
 
 const sortSongs = () => {
